@@ -1,0 +1,19 @@
+.heading {
+  background-color: red;
+
+  /* Create the gradient. */
+  background: linear-gradient(
+    90deg,
+    rgba(24, 27, 31, 0.7455357142857143) 0%,
+    rgba(0, 19, 45, 0.9864320728291317) 84%
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
