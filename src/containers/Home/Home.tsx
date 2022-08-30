@@ -1,6 +1,7 @@
 import React from "react";
 import Banner from "../../components/banner/Banner";
 import BodyHeading from "../../components/bodyHeading/BodyHeading";
+import Footer from "../footer/footer";
 import SampleProduct from "../sampleProduct/SampleProduct";
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
       <Banner />
       <BodyHeading />
       <SampleProduct />
+      <Footer />
     </div>
   );
 }
