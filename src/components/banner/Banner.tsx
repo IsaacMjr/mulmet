@@ -10,6 +10,14 @@ const Banner: React.FC = () => {
         <source src={mulround} type="video/mp4" />
       </video>
       <Header />
+      <div className="text-white font-Telugu absolute top-[40%] right-[40%]">
+        <p className="uppercase font-semibold text-5xl text-center tracking-wider">
+          mulmet
+        </p>
+        <p className=" uppercase text-2xl text-center tracking-wider">
+          current specialist at your service
+        </p>
+      </div>
     </div>
   );
 };
