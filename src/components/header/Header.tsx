@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import NavMenu from "../navMenu/navMenu";
+import Search from "../search/search";
 
 const Header: React.FC = () => {
-  const [openMenu, setOpenMenu] = useState<boolean>(false);
+  const [openSearch, setOpenSearch] = useState<boolean>(false);
+  function handleSearch() {
+    setOpenSearch(!openSearch);
+  }
 
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   function handleMenu(): void {
     setOpenMenu(!openMenu);
   }
@@ -36,9 +41,32 @@ const Header: React.FC = () => {
         <div className="text-white">
           <p>logo</p>
         </div>
-        <div className="trial flex [&>*]:m-5 [&>*]:text-white font-semibold">
-          <p>search</p>
-          <div className="flex items-center">
+        <div className="trial flex items-center [&>*]:m-5 [&>*]:text-white font-semibold">
+          {/* search component */}
+          <div
+            className="flex items-center [&>*]:mx-1 cursor-pointer"
+            onClick={handleSearch}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+
+            <p>search</p>
+          </div>
+
+          {/* cart component */}
+          <div className="flex items-center [&>*]:mx-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -57,6 +85,7 @@ const Header: React.FC = () => {
           </div>
         </div>
         {openMenu && <NavMenu handleMenu={handleMenu} />}
+        {openSearch && <Search handleSearch={handleSearch} />}
       </div>
     </div>
   );
